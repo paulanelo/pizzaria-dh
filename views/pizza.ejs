@@ -1,0 +1,12 @@
+<%- include('partials/header', { title : pizza.nome }) %>
+<main class="card">
+  <article class="pizza-card">
+    <h1 class="pizza-card__title"><%= pizza.nome %></h1>
+    <img src="/<%= pizza.img %>" alt="<%= pizza.nome %>">
+    <section class="pizza-card__detalhes">
+      <p><%= pizza.ingredientes.join(', ') %></p>
+      <p><%= pizza.preco.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) %></p>
+    </section>
+  </article>
+</main>
+<%- include('partials/footer') %>

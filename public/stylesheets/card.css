@@ -1,0 +1,43 @@
+main.card {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+
+.pizza-card {
+  width: 50%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.pizza-card img {
+  min-height:  360px;
+  height: 400px;
+}
+
+.pizza-card__title {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.pizza-card__detalhes {
+  display: flex;
+}
+
+.pizza-card__detalhes p:nth-child(1) {
+  flex-grow: 2;
+  text-transform: capitalize;
+}
+
+@media (max-width: 1200px) {
+  .pizza-card  {
+    width: 60% ;
+  }
+}
+
+@media (max-width: 750px){
+  .pizza-card  {
+    width: 90% ;
+  }
+}

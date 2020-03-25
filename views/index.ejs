@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('partials/header', { title : 'Home' }) %>
+	<form action="pizza">
+		<input type="text" name="busca" placeholder="Qual pizza você procura?" autocomplete="off">
+		<button type="submit">Buscar</button>
+	</form>
+	<main>
+		<% for(let pizza of pizzas) { %>
+			<article>
+				<img src="<%= pizza.img %>" alt="<%= pizza.nome %>">
+				<div class="links-area">
+					<a>+ Add</a>
+					<a href="pizza/<%= pizza.id%>">Ver mais</a>
+				</div>
+				<div><%= pizza.nome %></div>
+				<span><%= pizza.preco.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) 
+					%></span>
+			</article>
+		<% } %>
+		<div class="cart">AAAAAAAAAAAAAA</div>
+	</main>
+<%- include('partials/footer') %>
